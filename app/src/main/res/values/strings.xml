@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AppRecyclerView</string>
+    <string name="tituloejercio2">LISTADO DE ELEMENTOS</string>
+
     <string name="titulolista">LISTADO DE ELEMENTOS</string>
+
 </resources>

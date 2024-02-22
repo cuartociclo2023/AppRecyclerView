@@ -2,10 +2,25 @@ package pe.edu.idat.apprecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import pe.edu.idat.apprecyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.rvelementos.layoutManager = LinearLayoutManager(applicationContext)
+        binding.rvelementos.adapter = AdapterItem(listaElementos())
+    }
+    private fun listaElementos(): List<String>{
+        val lista = ArrayList<String>()
+        var i = 0
+        while(i < 20){
+            lista.add("valor $i")
+            i++;
+        }
+        return lista
     }
 }
